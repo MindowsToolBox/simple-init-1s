@@ -346,7 +346,7 @@ static int bootmenu_load(struct bootmenu*bm){
 		LV_LABEL_LONG_DOT;
 	char**cs=confd_ls("boot.configs");
 	if(cs){
-		bm->timeout=confd_get_integer("boot.timeout",10);
+		bm->timeout=confd_get_integer("boot.timeout",1);
 		bm->def=confd_get_string("boot.current",NULL);
 		if(!bm->def)bm->def=confd_get_string("boot.default",NULL);
 		if(bm->folder[0])bootmenu_add(bm,NULL);
